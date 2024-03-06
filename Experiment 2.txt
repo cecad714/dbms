@@ -1,0 +1,43 @@
+1. Create new table Persons with attributes PersonID (integer, PRIMARY KEY),  Name (varchar , NOT NULL), Aadhar (Number, NOT NULL, UNIQUE), Age(integer , CHECK>18).
+
+-->> CREATE TABLE PERSONS(PersonID INTEGER PRIMARY KEY, Name VARCHAR(255) NOT NULL,Adhaar NUMERIC UNIQUE NOT NULL, Age INTEGER CHECK(AGE>18));
+
+2. CREATE TABLE Orders with attributes OrderID (PRIMARY KEY),OrderNumber(NOT NULL) and PersonID( set FOREIGN KEY on attribute PersonID referencing the column PersonId of Person table)
+
+-->>CREATE TABLE Orders(OrderID INTEGER PRIMARY KEY, OrderNumber VARCHAR(255) NOT NULL, PersonID INTEGER, FOREIGN KEY (PersonID) REFERENCES PERSONS(PersonID));
+
+3. Display the structure of Persons tables.
+
+-->> DESC Persons;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| PersonID | int(11)       | NO   | PRI | NULL    |       |
+| Name     | varchar(255)  | NO   |     | NULL    |       |
+| Adhaar   | decimal(10,0) | NO   | UNI | NULL    |       |
+| Age      | int(11)       | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+
+4. Display the structure of Orders tables.
+
+-->> DESC Orders;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| OrderID     | int(11)      | NO   | PRI | NULL    |       |
+| OrderNumber | varchar(255) | NO   |     | NULL    |       |
+| PersonID    | int(11)      | YES  | MUL | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+5. Add emp_no as the primary key of the table Employee.
+-->>ALTER TABLE EMPLOYEE ADD PRIMARY KEY(EMP_NO);
+
+6. Add dept_no as the primary key of the table Department.
+-->>ALTER TABLE DEPARTMENT ADD PRIMARY KEY(DEPT_NO);
+
+7. Add dept_no in Employee table as the foreign key reference to the table Department
+with on delete cascade.
+--> ALTER TABLE EMPLOYEE ADD CONSTRAINT FK_EMP_DEPT FOREIGN KEY (DEPT_NO) REFERENCES DEPARTMENT(DEPT_NO) ON DELETE CASCADE;
+
+8. Drop the primary key of the table Orders.
+-->>ALTER TABLE Orders DROP PRIMARY KEY;
