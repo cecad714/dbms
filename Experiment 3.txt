@@ -1,0 +1,51 @@
+Experiment No: 3
+Familiarization of DML Commands.
+---------------------------------
+
+1. Add at least 10 rows into the table Employee and Department. 
+
+-->>INSERT INTO DEPARTMENT (DEPT_NO, DEPT_NAME) VALUES ('D01', 'Engineering'), ('D02', 'Marketing'),('D03', 'Human Resources'),('D04', 'Finance'),('D05', 'Customer Service');
+
+-->>INSERT INTO EMPLOYEE (EMP_NO, EMP_NAME, DOB, ADDRESS, MOBILE_NO, DEPT_NO, SALARY, design) VALUES ('E1', 'Ravi', '1990-05-15', '123 Main St, Kochi', 1234567890, 'D1', '75000.00', 'Engineer'), ('E2', 'Priya', '1992-08-20', '456 Elm St, Trivandrum', 9876543210, 'D2', '65000.00', 'Marketing Specialist'), ('E3', 'Ajay', '1985-12-10', '789 Oak St, Kozhikode', 5551234567, 'D1', '80000.00', 'Senior Engineer'), ('E4', 'Anu', '1988-03-25', '321 Pine St, Thrissur', 8889991234, 'D3', '60000.00', 'HR Assistant'), ('E5', 'Deepak', '1991-06-30', '654 Cedar St, Kannur', 4445556789, 'D4', '85000.00', 'Financial Analyst'), ('E6', 'Neha', '1993-09-05', '987 Maple St, Kollam', 7778883456, 'D1', '70000.00', 'Software Developer'), ('E7', 'Vijay', '1987-02-18', '147 Walnut St, Palakkad', 2223334567, 'D5', '62000.00', 'Customer Support Representative'), ('E8', 'Lata', '1990-07-12', '369 Birch St, Alappuzha', 3334445678, 'D3', '58000.00', 'HR Manager'), ('E9', 'Rahul', '1989-10-28', '258 Cherry St, Malappuram', 6667778901, 'D2', '70000.00', 'Marketing Manager'), ('E10', 'Anita', '1994-04-03', '741 Willow St, Pathanamthitta', 9990002345, 'D4', '90000.00', 'Finance Manager'), ('E11', 'Rajeev', '1986-11-09', '852 Spruce St, Wayanad', 1112223456, 'D5', '63000.00', 'Customer Service Supervisor'), ('E12', 'Sima', '1992-01-20', '963 Oak St, Idukki', 6661112222, 'D1', '72000.00', 'Senior Software Engineer');
+
+2. Display all the records from the above tables. 
+
+-->> SELECT * FROM EMPLOYEE;
++--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
+| EMP_NO | EMP_NAME | DOB        | ADDRESS                       | MOBILE_NO  | DEPT_NO | SALARY   | design                          |
++--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
+| E1     | Ravi     | 1990-05-15 | 123 Main St, Kochi            | 1234567890 | D01      | 75000.00 | Engineer                        |
+| E10    | Anita    | 1994-04-03 | 741 Willow St, Pathanamthitta | 9990002345 | D04      | 90000.00 | Finance Manager                 |
+| E11    | Rajeev   | 1986-11-09 | 852 Spruce St, Wayanad        | 1112223456 | D05      | 63000.00 | Customer Service Supervisor     |
+| E12    | Sima     | 1992-01-20 | 963 Oak St, Idukki            | 6661112222 | D01      | 72000.00 | Senior Software Engineer        |
+| E2     | Priya    | 1992-08-20 | 456 Elm St, Trivandrum        | 9876543210 | D02      | 65000.00 | Marketing Specialist            |
+| E3     | Ajay     | 1985-12-10 | 789 Oak St, Kozhikode         | 5551234567 | D01      | 80000.00 | Senior Engineer                 |
+| E4     | Anu      | 1988-03-25 | 321 Pine St, Thrissur         | 8889991234 | D03      | 60000.00 | HR Assistant                    |
+| E5     | Deepak   | 1991-06-30 | 654 Cedar St, Kannur          | 4445556789 | D04      | 85000.00 | Financial Analyst               |
+| E6     | Neha     | 1993-09-05 | 987 Maple St, Kollam          | 7778883456 | D01      | 70000.00 | Software Developer              |
+| E7     | Vijay    | 1987-02-18 | 147 Walnut St, Palakkad       | 2223334567 | D05      | 62000.00 | Customer Support Representative |
+| E8     | Lata     | 1990-07-12 | 369 Birch St, Alappuzha       | 3334445678 | D03      | 58000.00 | HR Manager                      |
+| E9     | Rahul    | 1989-10-28 | 258 Cherry St, Malappuram     | 6667778901 | D02      | 70000.00 | Marketing Manager               |
++--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
+
+-->> SELECT * FROM DEPARTMENT;
++---------+------------------+
+| DEPT_NO | DEPT_NAME        |
++---------+------------------+
+| D01      | Engineering      |
+| D02      | Marketing        |
+| D03      | Human Resources  |
+| D04      | Finance          |
+| D05      | Customer Service |
++---------+------------------+
+
+
+3. Display the emp_no and name of employees from department no ‘D02’.
+-->> SELECT EMP_NO, EMP_NAME FROM EMPLOYEE WHERE DEPT_NO = 'D02';
++--------+----------+
+| EMP_NO | EMP_NAME |
++--------+----------+
+| E2     | Priya    |
+| E9     | Rahul    |
++--------+----------+
+
