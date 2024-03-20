@@ -52,5 +52,24 @@ Familiarization of DML Commands.
 4. Display emp_no, emp_name , designation, deptno and salary of employees in the 
 descending order of salary. 
 
+--> SELECT EMP_NO, EMP_NAME, design, DEPT_NO, SALARY FROM EMPLOYEE ORDER BY SALARY DESC;
++--------+----------+---------------------------------+---------+----------+
+| EMP_NO | EMP_NAME | design                          | DEPT_NO | SALARY   |
++--------+----------+---------------------------------+---------+----------+
+| E10    | Anita    | Finance Manager                 | D04     | 90000.00 |
+| E05    | Deepak   | Financial Analyst               | D04     | 85000.00 |
+| E03    | Ajay     | Senior Engineer                 | D01     | 80000.00 |
+| E01    | Ravi     | Engineer                        | D01     | 75000.00 |
+| E12    | Sima     | Senior Software Engineer        | D01     | 72000.00 |
+| E06    | Neha     | Software Developer              | D01     | 70000.00 |
+| E09    | Rahul    | Marketing Manager               | D02     | 70000.00 |
+| E02    | Priya    | Marketing Specialist            | D02     | 65000.00 |
+| E11    | Rajeev   | Customer Service Supervisor     | D05     | 63000.00 |
+| E07    | Vijay    | Customer Support Representative | D05     | 62000.00 |
+| E04    | Anu      | HR Assistant                    | D03     | 60000.00 |
+| E08    | Lata     | HR Manager                      | D03     | 58000.00 |
++--------+----------+---------------------------------+---------+----------+
+
+
 
 
