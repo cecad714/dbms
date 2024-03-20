@@ -102,6 +102,26 @@ mysql> SELECT DISTINCT design FROM EMPLOYEE;
 | Senior Software Engineer        |
 +---------------------------------+
 
+7. Change the salary of employee to 45000 whose designation is manager
+
+mysql> UPDATE EMPLOYEE SET SALARY='45000' WHERE design LIKE '%Manager%';
+mysql> SELECT * FROM EMPLOYEE;
++--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
+| EMP_NO | EMP_NAME | DOB        | ADDRESS                       | MOBILE_NO  | DEPT_NO | SALARY   | design                          |
++--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
+| E01    | Ravi     | 1990-05-15 | 123 Main St, Kochi            | 1234567890 | D01     | 75000.00 | Engineer                        |
+| E02    | Priya    | 1992-08-20 | 456 Elm St, Trivandrum        | 9876543210 | D02     | 65000.00 | Marketing Specialist            |
+| E03    | Ajay     | 1985-12-10 | 789 Oak St, Kozhikode         | 5551234567 | D01     | 80000.00 | Senior Engineer                 |
+| E04    | Anu      | 1988-03-25 | 321 Pine St, Thrissur         | 8889991234 | D03     | 60000.00 | HR Assistant                    |
+| E05    | Deepak   | 1991-06-30 | 654 Cedar St, Kannur          | 4445556789 | D04     | 85000.00 | Financial Analyst               |
+| E06    | Neha     | 1993-09-05 | 987 Maple St, Kollam          | 7778883456 | D01     | 3600     | Software Developer              |
+| E07    | Vijay    | 1987-02-18 | 147 Walnut St, Palakkad       | 2223334567 | D05     | 62000.00 | Customer Support Representative |
+| E08    | Lata     | 1990-07-12 | 369 Birch St, Alappuzha       | 3334445678 | D03     | 45000    | HR Manager                      |
+| E09    | Rahul    | 1989-10-28 | 258 Cherry St, Malappuram     | 6667778901 | D02     | 45000    | Marketing Manager               |
+| E10    | Anita    | 1994-04-03 | 741 Willow St, Pathanamthitta | 9990002345 | D04     | 45000    | Finance Manager                 |
+| E11    | Rajeev   | 1986-11-09 | 852 Spruce St, Wayanad        | 1112223456 | D05     | 4500     | Customer Service Supervisor     |
+| E12    | Sima     | 1992-01-20 | 963 Oak St, Idukki            | 6661112222 | D01     | 72000.00 | Senior Software Engineer        |
++--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
 
 
 
