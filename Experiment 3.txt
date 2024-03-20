@@ -6,7 +6,8 @@ Familiarization of DML Commands.
 
 -->>INSERT INTO DEPARTMENT (DEPT_NO, DEPT_NAME) VALUES ('D01', 'Engineering'), ('D02', 'Marketing'),('D03', 'Human Resources'),('D04', 'Finance'),('D05', 'Customer Service');
 
--->>INSERT INTO EMPLOYEE (EMP_NO, EMP_NAME, DOB, ADDRESS, MOBILE_NO, DEPT_NO, SALARY, design) VALUES ('E01', 'Ravi', '1990-05-15', '123 Main St, Kochi', 1234567890, 'D01', '75000.00', 'Engineer'), ('E02', 'Priya', '1992-08-20', '456 Elm St, Trivandrum', 9876543210, 'D02', '65000.00', 'Marketing Specialist'), ('E03', 'Ajay', '1985-12-10', '789 Oak St, Kozhikode', 5551234567, 'D01', '80000.00', 'Senior Engineer'), ('E04', 'Anu', '1988-03-25', '321 Pine St, Thrissur', 8889991234, 'D03', '60000.00', 'HR Assistant'), ('E05', 'Deepak', '1991-06-30', '654 Cedar St, Kannur', 4445556789, 'D04', '85000.00', 'Financial Analyst'), ('E06', 'Neha', '1993-09-05', '987 Maple St, Kollam', 7778883456, 'D01', '70000.00', 'Software Developer'), ('E07', 'Vijay', '1987-02-18', '147 Walnut St, Palakkad', 2223334567, 'D05', '62000.00', 'Customer Support Representative'), ('E08', 'Lata', '1990-07-12', '369 Birch St, Alappuzha', 3334445678, 'D03', '58000.00', 'HR Manager'), ('E09', 'Rahul', '1989-10-28', '258 Cherry St, Malappuram', 6667778901, 'D2', '70000.00', 'Marketing Manager'), ('E10', 'Anita', '1994-04-03', '741 Willow St, Pathanamthitta', 9990002345, 'D04', '90000.00', 'Finance Manager'), ('E11', 'Rajeev', '1986-11-09', '852 Spruce St, Wayanad', 1112223456, 'D05', '63000.00', 'Customer Service Supervisor'), ('E12', 'Sima', '1992-01-20', '963 Oak St, Idukki', 6661112222, 'D01', '72000.00', 'Senior Software Engineer');
+-->>INSERT INTO EMPLOYEE (EMP_NO, EMP_NAME, DOB, ADDRESS, MOBILE_NO, DEPT_NO, SALARY, design) VALUES ('E01', 'Ravi', '1990-05-15', '123 Main St, Kochi', 1234567890, 'D01', 75000.00, 'Engineer'), ('E02', 'Priya', '1992-08-20', '456 Elm St, Trivandrum', 9876543210, 'D02', 65000.00, 'Marketing Specialist'), ('E03', 'Ajay', '1985-12-10', '789 Oak St, Kozhikode', 5551234567, 'D01', 80000.00, 'Senior Engineer'), ('E04', 'Anu', '1988-03-25', '321 Pine St, Thrissur', 8889991234, 'D03', 60000.00, 'HR Assistant'), ('E05', 'Deepak', '1991-06-30', '654 Cedar St, Kannur', 4445556789, 'D04', 85000.00, 'Financial Analyst'), ('E06', 'Neha', '1993-09-05', '987 Maple St, Kollam', 7778883456, 'D01', 3600.00, 'Software Developer'), ('E07', 'Vijay', '1987-02-18', '147 Walnut St, Palakkad', 2223334567, 'D05', 62000.00, 'Customer Support Representative'), ('E08', 'Lata', '1990-07-12', '369 Birch St, Alappuzha', 3334445678, 'D03', 58000.00, 'HR Manager'), ('E09', 'Rahul', '1989-10-28', '258 Cherry St, Malappuram', 6667778901, 'D02', 2500.00, 'Marketing Manager'), ('E10', 'Anita', '1994-04-03', '741 Willow St, Pathanamthitta', 9990002345, 'D04', 90000.00, 'Finance Manager'), ('E11', 'Rajeev', '1986-11-09', '852 Spruce St, Wayanad', 1112223456, 'D05', 4500.00, 'Customer Service Supervisor'), ('E12', 'Sima', '1992-01-20', '963 Oak St, Idukki', 6661112222, 'D01', 72000.00, 'Senior Software Engineer');
+
 
 2. Display all the records from the above tables. 
 
@@ -19,14 +20,15 @@ Familiarization of DML Commands.
 | E03    | Ajay     | 1985-12-10 | 789 Oak St, Kozhikode         | 5551234567 | D01     | 80000.00 | Senior Engineer                 |
 | E04    | Anu      | 1988-03-25 | 321 Pine St, Thrissur         | 8889991234 | D03     | 60000.00 | HR Assistant                    |
 | E05    | Deepak   | 1991-06-30 | 654 Cedar St, Kannur          | 4445556789 | D04     | 85000.00 | Financial Analyst               |
-| E06    | Neha     | 1993-09-05 | 987 Maple St, Kollam          | 7778883456 | D01     | 70000.00 | Software Developer              |
+| E06    | Neha     | 1993-09-05 | 987 Maple St, Kollam          | 7778883456 | D01     | 3600     | Software Developer              |
 | E07    | Vijay    | 1987-02-18 | 147 Walnut St, Palakkad       | 2223334567 | D05     | 62000.00 | Customer Support Representative |
 | E08    | Lata     | 1990-07-12 | 369 Birch St, Alappuzha       | 3334445678 | D03     | 58000.00 | HR Manager                      |
-| E09    | Rahul    | 1989-10-28 | 258 Cherry St, Malappuram     | 6667778901 | D02     | 70000.00 | Marketing Manager               |
+| E09    | Rahul    | 1989-10-28 | 258 Cherry St, Malappuram     | 6667778901 | D02     | 2500     | Marketing Manager               |
 | E10    | Anita    | 1994-04-03 | 741 Willow St, Pathanamthitta | 9990002345 | D04     | 90000.00 | Finance Manager                 |
-| E11    | Rajeev   | 1986-11-09 | 852 Spruce St, Wayanad        | 1112223456 | D05     | 63000.00 | Customer Service Supervisor     |
+| E11    | Rajeev   | 1986-11-09 | 852 Spruce St, Wayanad        | 1112223456 | D05     | 4500     | Customer Service Supervisor     |
 | E12    | Sima     | 1992-01-20 | 963 Oak St, Idukki            | 6661112222 | D01     | 72000.00 | Senior Software Engineer        |
 +--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
+
 
 -->> SELECT * FROM DEPARTMENT;
 +---------+------------------+
@@ -61,14 +63,15 @@ descending order of salary.
 | E03    | Ajay     | Senior Engineer                 | D01     | 80000.00 |
 | E01    | Ravi     | Engineer                        | D01     | 75000.00 |
 | E12    | Sima     | Senior Software Engineer        | D01     | 72000.00 |
-| E06    | Neha     | Software Developer              | D01     | 70000.00 |
-| E09    | Rahul    | Marketing Manager               | D02     | 70000.00 |
 | E02    | Priya    | Marketing Specialist            | D02     | 65000.00 |
-| E11    | Rajeev   | Customer Service Supervisor     | D05     | 63000.00 |
 | E07    | Vijay    | Customer Support Representative | D05     | 62000.00 |
 | E04    | Anu      | HR Assistant                    | D03     | 60000.00 |
 | E08    | Lata     | HR Manager                      | D03     | 58000.00 |
+| E11    | Rajeev   | Customer Service Supervisor     | D05     | 4500     |
+| E06    | Neha     | Software Developer              | D01     | 3600     |
+| E09    | Rahul    | Marketing Manager               | D02     | 2500     |
 +--------+----------+---------------------------------+---------+----------+
+
 
 
 
