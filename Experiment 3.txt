@@ -72,6 +72,37 @@ descending order of salary.
 | E09    | Rahul    | Marketing Manager               | D02     | 2500     |
 +--------+----------+---------------------------------+---------+----------+
 
+5. Display the emp_no , name of employees whose salary is between 2000 and 5000
+
+--> SELECT EMP_NO, EMP_NAME FROM EMPLOYEE  WHERE SALARY BETWEEN 2000 AND 5000;
++--------+----------+
+| EMP_NO | EMP_NAME |
++--------+----------+
+| E06    | Neha     |
+| E09    | Rahul    |
+| E11    | Rajeev   |
++--------+----------+
+6. Display the designations without duplicate values 
+
+mysql> SELECT DISTINCT design FROM EMPLOYEE;
++---------------------------------+
+| design                          |
++---------------------------------+
+| Engineer                        |
+| Marketing Specialist            |
+| Senior Engineer                 |
+| HR Assistant                    |
+| Financial Analyst               |
+| Software Developer              |
+| Customer Support Representative |
+| HR Manager                      |
+| Marketing Manager               |
+| Finance Manager                 |
+| Customer Service Supervisor     |
+| Senior Software Engineer        |
++---------------------------------+
+
+
 
 
 
