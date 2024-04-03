@@ -4,124 +4,315 @@ Familiarization of DML Commands.
 
 1. Add at least 10 rows into the table Employee and Department. 
 
--->>INSERT INTO DEPARTMENT (DEPT_NO, DEPT_NAME) VALUES ('D01', 'Engineering'), ('D02', 'Marketing'),('D03', 'Human Resources'),('D04', 'Finance'),('D05', 'Customer Service');
+-->>INSERT INTO Department (dept_no, dept_name, location) 
+VALUES 
+('D01', 'Finance', 'New York'),
+('D02', 'Marketing', 'Los Angeles'),
+('D03', 'Human Resources', 'Chicago'),
+('D04', 'Operations', 'Houston'),
+('D05', 'IT', 'San Francisco');
 
--->>INSERT INTO EMPLOYEE (EMP_NO, EMP_NAME, DOB, ADDRESS, MOBILE_NO, DEPT_NO, SALARY, design) VALUES ('E01', 'Ravi', '1990-05-15', '123 Main St, Kochi', 1234567890, 'D01', 75000.00, 'Engineer'), ('E02', 'Priya', '1992-08-20', '456 Elm St, Trivandrum', 9876543210, 'D02', 65000.00, 'Marketing Specialist'), ('E03', 'Ajay', '1985-12-10', '789 Oak St, Kozhikode', 5551234567, 'D01', 80000.00, 'Senior Engineer'), ('E04', 'Anu', '1988-03-25', '321 Pine St, Thrissur', 8889991234, 'D03', 60000.00, 'HR Assistant'), ('E05', 'Deepak', '1991-06-30', '654 Cedar St, Kannur', 4445556789, 'D04', 85000.00, 'Financial Analyst'), ('E06', 'Neha', '1993-09-05', '987 Maple St, Kollam', 7778883456, 'D01', 3600.00, 'Software Developer'), ('E07', 'Vijay', '1987-02-18', '147 Walnut St, Palakkad', 2223334567, 'D05', 62000.00, 'Customer Support Representative'), ('E08', 'Lata', '1990-07-12', '369 Birch St, Alappuzha', 3334445678, 'D03', 58000.00, 'HR Manager'), ('E09', 'Rahul', '1989-10-28', '258 Cherry St, Malappuram', 6667778901, 'D02', 2500.00, 'Marketing Manager'), ('E10', 'Anita', '1994-04-03', '741 Willow St, Pathanamthitta', 9990002345, 'D04', 90000.00, 'Finance Manager'), ('E11', 'Rajeev', '1986-11-09', '852 Spruce St, Wayanad', 1112223456, 'D05', 4500.00, 'Customer Service Supervisor'), ('E12', 'Sima', '1992-01-20', '963 Oak St, Idukki', 6661112222, 'D01', 72000.00, 'Senior Software Engineer');
+-->>INSERT INTO Employee (emp_no, emp_name, dob, address, mobile_no, dept_no, salary, designation) 
+VALUES 
+('emp1', 'John Doe', '1990-05-15', '123 Main St, City', '1234567890', 'D01', 30000, 'Manager'),
+('emp2', 'Jane Smith', '1992-08-20', '456 Elm St, Town', '9876543210', 'D02', 19000, 'Marketing Specialist'),
+('emp3', 'Michael Johnson', '1985-03-10', '789 Oak St, Village', '5554443333', 'D03', 40000, 'HR Coordinator'),
+('emp4', 'Emily Brown', '1988-11-25', '567 Pine St, Hamlet', '2223334444', 'D01', 32000, 'Computer Assistant'),
+('emp5', 'Alice Wilson', '1993-02-28', '890 Cedar St, Suburb', '3332221111', 'D02', 38000, 'Marketing Associate'),
+('emp6', 'Jessica Lee', '1991-07-12', '234 Maple St, Rural', '7778889999', 'D03', 175000, 'HR Specialist'),
+('emp7', 'David Garcia', '1987-09-05', '678 Birch St, Countryside', '9998887777', 'D04', 200000, 'Operations Manager'),
+('emp8', 'Sophia Martinez', '1990-12-30', '345 Walnut St, Urban', '1112223333', 'D02', 37000, 'Marketing Analyst'),
+('emp9', 'Matthew Anderson', '1989-04-18', '901 Cherry St, Coastal', '6665554444', 'D05', 7000, 'Intern'),
+('emp10', 'Olivia Taylor', '1994-06-22', '432 Spruce St, Lakeside', '8889990000', 'D01', 19500, 'Finance Assistant');
+
 
 
 2. Display all the records from the above tables. 
 
 -->> SELECT * FROM EMPLOYEE;
-+--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
-| EMP_NO | EMP_NAME | DOB        | ADDRESS                       | MOBILE_NO  | DEPT_NO | SALARY   | design                          |
-+--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
-| E01    | Ravi     | 1990-05-15 | 123 Main St, Kochi            | 1234567890 | D01     | 75000.00 | Engineer                        |
-| E02    | Priya    | 1992-08-20 | 456 Elm St, Trivandrum        | 9876543210 | D02     | 65000.00 | Marketing Specialist            |
-| E03    | Ajay     | 1985-12-10 | 789 Oak St, Kozhikode         | 5551234567 | D01     | 80000.00 | Senior Engineer                 |
-| E04    | Anu      | 1988-03-25 | 321 Pine St, Thrissur         | 8889991234 | D03     | 60000.00 | HR Assistant                    |
-| E05    | Deepak   | 1991-06-30 | 654 Cedar St, Kannur          | 4445556789 | D04     | 85000.00 | Financial Analyst               |
-| E06    | Neha     | 1993-09-05 | 987 Maple St, Kollam          | 7778883456 | D01     | 3600     | Software Developer              |
-| E07    | Vijay    | 1987-02-18 | 147 Walnut St, Palakkad       | 2223334567 | D05     | 62000.00 | Customer Support Representative |
-| E08    | Lata     | 1990-07-12 | 369 Birch St, Alappuzha       | 3334445678 | D03     | 58000.00 | HR Manager                      |
-| E09    | Rahul    | 1989-10-28 | 258 Cherry St, Malappuram     | 6667778901 | D02     | 2500     | Marketing Manager               |
-| E10    | Anita    | 1994-04-03 | 741 Willow St, Pathanamthitta | 9990002345 | D04     | 90000.00 | Finance Manager                 |
-| E11    | Rajeev   | 1986-11-09 | 852 Spruce St, Wayanad        | 1112223456 | D05     | 4500     | Customer Service Supervisor     |
-| E12    | Sima     | 1992-01-20 | 963 Oak St, Idukki            | 6661112222 | D01     | 72000.00 | Senior Software Engineer        |
-+--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
+emp_no |  emp_name       | dob        | address                  | mobile_no   | dept_no | salary | designation      
+-------|-----------------|------------|--------------------------|-------------|---------|--------|-------------------
+emp1   | John Doe        | 1990-05-15 | 123 Main St, City       | 1234567890  | D01     | 30000  | Manager
+emp2   | Jane Smith      | 1992-08-20 | 456 Elm St, Town        | 9876543210  | D02     | 19000  | Marketing Specialist
+emp3   | Michael Johnson | 1985-03-10 | 789 Oak St, Village     | 5554443333  | D03     | 40000  | HR Coordinator
+emp4   | Emily Brown     | 1988-11-25 | 567 Pine St, Hamlet     | 2223334444  | D01     | 32000  | Computer Assistant
+emp5   | Alice Wilson    | 1993-02-28 | 890 Cedar St, Suburb    | 3332221111  | D02     | 38000  | Marketing Associate
+emp6   | Jessica Lee     | 1991-07-12 | 234 Maple St, Rural     | 7778889999  | D03     | 175000  | HR Specialist
+emp7   | David Garcia    | 1987-09-05 | 678 Birch St, Countryside| 9998887777  | D04    | 200000  | Operations Manager
+emp8   | Sophia Martinez | 1990-12-30 | 345 Walnut St, Urban    | 1112223333  | D02     | 37000  | Marketing Analyst
+emp9   | Matthew Anderson| 1989-04-18 | 901 Cherry St, Coastal  | 6665554444  | D05     | 7000   | Intern
+emp10  | Olivia Taylor   | 1994-06-22 | 432 Spruce St, Lakeside | 8889990000  | D01     | 19500  | Finance Assistant
 
 
 -->> SELECT * FROM DEPARTMENT;
-+---------+------------------+
-| DEPT_NO | DEPT_NAME        |
-+---------+------------------+
-| D01      | Engineering      |
-| D02      | Marketing        |
-| D03      | Human Resources  |
-| D04      | Finance          |
-| D05      | Customer Service |
-+---------+------------------+
-
+dept_no |  dept_name      | location
+--------|-----------------|--------------
+D01     | Finance         | New York
+D02     | Marketing       | Los Angeles
+D03     | Human Resources | Chicago
+D04     | Operations      | Houston
+D05     | IT              | San Francisco
 
 3. Display the emp_no and name of employees from department no ‘D02’.
--->> SELECT EMP_NO, EMP_NAME FROM EMPLOYEE WHERE DEPT_NO = 'D02';
-+--------+----------+
-| EMP_NO | EMP_NAME |
-+--------+----------+
-| E02     | Priya    |
-| E09     | Rahul    |
-+--------+----------+
+-->> SELECT emp_no, emp_name 
+FROM Employee 
+WHERE dept_no = 'D02';
+
+emp_no |  emp_name   
+-------|-----------------
+emp2   | Jane Smith      
+emp5   | Alice Wilson    
+emp8   | Sophia Martinez 
+
 
 4. Display emp_no, emp_name , designation, deptno and salary of employees in the 
 descending order of salary. 
 
---> SELECT EMP_NO, EMP_NAME, design, DEPT_NO, SALARY FROM EMPLOYEE ORDER BY SALARY DESC;
-+--------+----------+---------------------------------+---------+----------+
-| EMP_NO | EMP_NAME | design                          | DEPT_NO | SALARY   |
-+--------+----------+---------------------------------+---------+----------+
-| E10    | Anita    | Finance Manager                 | D04     | 90000.00 |
-| E05    | Deepak   | Financial Analyst               | D04     | 85000.00 |
-| E03    | Ajay     | Senior Engineer                 | D01     | 80000.00 |
-| E01    | Ravi     | Engineer                        | D01     | 75000.00 |
-| E12    | Sima     | Senior Software Engineer        | D01     | 72000.00 |
-| E02    | Priya    | Marketing Specialist            | D02     | 65000.00 |
-| E07    | Vijay    | Customer Support Representative | D05     | 62000.00 |
-| E04    | Anu      | HR Assistant                    | D03     | 60000.00 |
-| E08    | Lata     | HR Manager                      | D03     | 58000.00 |
-| E11    | Rajeev   | Customer Service Supervisor     | D05     | 4500     |
-| E06    | Neha     | Software Developer              | D01     | 3600     |
-| E09    | Rahul    | Marketing Manager               | D02     | 2500     |
-+--------+----------+---------------------------------+---------+----------+
+--> SELECT emp_no, emp_name, dept_no, salary, designation FROM Employee ORDER BY salary DESC;
+emp_no |  emp_name       | dept_no | salary | designation      
+-------|-----------------|---------|--------|-------------------
+emp7   | David Garcia    | D04     | 200000  | Operations Manager
+emp6   | Jessica Lee     | D03     | 175000  | HR Specialist
+emp5   | Alice Wilson    | D02     | 38000  | Marketing Associate
+emp8   | Sophia Martinez | D02     | 37000  | Marketing Analyst
+emp3   | Michael Johnson | D03     | 40000  | HR Coordinator
+emp4   | Emily Brown     | D01     | 32000  | Computer Assistant
+emp1   | John Doe        | D01     | 30000  | Manager
+emp10  | Olivia Taylor   | D01     | 19500  | Finance Assistant
+emp2   | Jane Smith      | D02     | 19000  | Marketing Specialist
+emp9   | Matthew Anderson| D05     | 7000   | Intern
+
 
 5. Display the emp_no , name of employees whose salary is between 2000 and 5000
 
---> SELECT EMP_NO, EMP_NAME FROM EMPLOYEE  WHERE SALARY BETWEEN 2000 AND 5000;
-+--------+----------+
-| EMP_NO | EMP_NAME |
-+--------+----------+
-| E06    | Neha     |
-| E09    | Rahul    |
-| E11    | Rajeev   |
-+--------+----------+
+--> SELECT emp_no, emp_name FROM Employee WHERE salary BETWEEN 2000 AND 5000;
+
+emp_no |  emp_name       |
+emp9   | Matthew Anderson|
+
 6. Display the designations without duplicate values 
 
 mysql> SELECT DISTINCT design FROM EMPLOYEE;
-+---------------------------------+
-| design                          |
-+---------------------------------+
-| Engineer                        |
-| Marketing Specialist            |
-| Senior Engineer                 |
-| HR Assistant                    |
-| Financial Analyst               |
-| Software Developer              |
-| Customer Support Representative |
-| HR Manager                      |
-| Marketing Manager               |
-| Finance Manager                 |
-| Customer Service Supervisor     |
-| Senior Software Engineer        |
-+---------------------------------+
 
-7. Change the salary of employee to 45000 whose designation is manager
+designation       
+-------------------
+Manager
+Marketing Specialist
+HR Coordinator
+Computer Assistant
+Marketing Associate
+HR Specialist
+Operations Manager
+Marketing Analyst
+Intern
+Finance Assistant
 
-mysql> UPDATE EMPLOYEE SET SALARY='45000' WHERE design LIKE '%Manager%';
+
+7. Change the salary of employee to 200000 whose designation is manager
+
+mysql> UPDATE Employee
+SET salary = 200000
+WHERE designation = 'Manager';
+
 mysql> SELECT * FROM EMPLOYEE;
-+--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
-| EMP_NO | EMP_NAME | DOB        | ADDRESS                       | MOBILE_NO  | DEPT_NO | SALARY   | design                          |
-+--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
-| E01    | Ravi     | 1990-05-15 | 123 Main St, Kochi            | 1234567890 | D01     | 75000.00 | Engineer                        |
-| E02    | Priya    | 1992-08-20 | 456 Elm St, Trivandrum        | 9876543210 | D02     | 65000.00 | Marketing Specialist            |
-| E03    | Ajay     | 1985-12-10 | 789 Oak St, Kozhikode         | 5551234567 | D01     | 80000.00 | Senior Engineer                 |
-| E04    | Anu      | 1988-03-25 | 321 Pine St, Thrissur         | 8889991234 | D03     | 60000.00 | HR Assistant                    |
-| E05    | Deepak   | 1991-06-30 | 654 Cedar St, Kannur          | 4445556789 | D04     | 85000.00 | Financial Analyst               |
-| E06    | Neha     | 1993-09-05 | 987 Maple St, Kollam          | 7778883456 | D01     | 3600     | Software Developer              |
-| E07    | Vijay    | 1987-02-18 | 147 Walnut St, Palakkad       | 2223334567 | D05     | 62000.00 | Customer Support Representative |
-| E08    | Lata     | 1990-07-12 | 369 Birch St, Alappuzha       | 3334445678 | D03     | 45000    | HR Manager                      |
-| E09    | Rahul    | 1989-10-28 | 258 Cherry St, Malappuram     | 6667778901 | D02     | 45000    | Marketing Manager               |
-| E10    | Anita    | 1994-04-03 | 741 Willow St, Pathanamthitta | 9990002345 | D04     | 45000    | Finance Manager                 |
-| E11    | Rajeev   | 1986-11-09 | 852 Spruce St, Wayanad        | 1112223456 | D05     | 4500     | Customer Service Supervisor     |
-| E12    | Sima     | 1992-01-20 | 963 Oak St, Idukki            | 6661112222 | D01     | 72000.00 | Senior Software Engineer        |
-+--------+----------+------------+-------------------------------+------------+---------+----------+---------------------------------+
+emp_no |  emp_name       | dob        | address                  | mobile_no   | dept_no | salary | designation      
+-------|-----------------|------------|--------------------------|-------------|---------|--------|-------------------
+emp1   | John Doe        | 1990-05-15 | 123 Main St, City       | 1234567890  | D01     | 200000  | Manager
+emp2   | Jane Smith      | 1992-08-20 | 456 Elm St, Town        | 9876543210  | D02     | 19000  | Marketing Specialist
+emp3   | Michael Johnson | 1985-03-10 | 789 Oak St, Village     | 5554443333  | D03     | 40000  | HR Coordinator
+emp4   | Emily Brown     | 1988-11-25 | 567 Pine St, Hamlet     | 2223334444  | D01     | 32000  | Computer Assistant
+emp5   | Alice Wilson    | 1993-02-28 | 890 Cedar St, Suburb    | 3332221111  | D02     | 38000  | Marketing Associate
+emp6   | Jessica Lee     | 1991-07-12 | 234 Maple St, Rural     | 7778889999  | D03     | 175000  | HR Specialist
+emp7   | David Garcia    | 1987-09-05 | 678 Birch St, Countryside| 9998887777  | D04     | 200000  | Operations Manager
+emp8   | Sophia Martinez | 1990-12-30 | 345 Walnut St, Urban    | 1112223333  | D02     | 37000  | Marketing Analyst
+emp9   | Matthew Anderson| 1989-04-18 | 901 Cherry St, Coastal  | 6665554444  | D05     | 7000   | Intern
+emp10  | Olivia Taylor   | 1994-06-22 | 432 Spruce St, Lakeside | 8889990000  | D01     | 19500  | Finance Assistant
+
+8. Change the mobile number of employees named John
+
+UPDATE Employee
+SET mobile_no = '7994924584'
+WHERE emp_name LIKE 'John%';
+
+emp_no |  emp_name       | dob        | address                  | mobile_no   | dept_no | salary | designation      
+-------|-----------------|------------|--------------------------|-------------|---------|--------|-------------------
+emp1   | John Doe        | 1990-05-15 | 123 Main St, City       | 7994924584  | D01     | 200000  | Manager
+emp2   | Jane Smith      | 1992-08-20 | 456 Elm St, Town        | 9876543210  | D02     | 19000  | Marketing Specialist
+emp3   | Michael Johnson | 1985-03-10 | 789 Oak St, Village     | 5554443333  | D03     | 40000  | HR Coordinator
+emp4   | Emily Brown     | 1988-11-25 | 567 Pine St, Hamlet     | 2223334444  | D01     | 32000  | Computer Assistant
+emp5   | Alice Wilson    | 1993-02-28 | 890 Cedar St, Suburb    | 3332221111  | D02     | 38000  | Marketing Associate
+emp6   | Jessica Lee     | 1991-07-12 | 234 Maple St, Rural     | 7778889999  | D03     | 175000  | HR Specialist
+emp7   | David Garcia    | 1987-09-05 | 678 Birch St, Countryside| 9998887777  | D04     | 200000  | Operations Manager
+emp8   | Sophia Martinez | 1990-12-30 | 345 Walnut St, Urban    | 1112223333  | D02     | 37000  | Marketing Analyst
+emp9   | Matthew Anderson| 1989-04-18 | 901 Cherry St, Coastal  | 6665554444  | D05     | 7000   | Intern
+emp10  | Olivia Taylor   | 1994-06-22 | 432 Spruce St, Lakeside | 8889990000  | D01     | 19500  | Finance Assistant
+
+9.Delete all employees whose salary is equal to Rs.7000  
+
+DELETE FROM Employee
+WHERE salary = 7000;
+
+emp_no |  emp_name       | dob        | address                  | mobile_no   | dept_no | salary | designation      
+-------|-----------------|------------|--------------------------|-------------|---------|--------|-------------------
+emp1   | John Doe        | 1990-05-15 | 123 Main St, City       | 7994924584  | D01     | 200000  | Manager
+emp2   | Jane Smith      | 1992-08-20 | 456 Elm St, Town        | 9876543210  | D02     | 19000  | Marketing Specialist
+emp3   | Michael Johnson | 1985-03-10 | 789 Oak St, Village     | 5554443333  | D03     | 40000  | HR Coordinator
+emp4   | Emily Brown     | 1988-11-25 | 567 Pine St, Hamlet     | 2223334444  | D01     | 32000  | Computer Assistant
+emp5   | Alice Wilson    | 1993-02-28 | 890 Cedar St, Suburb    | 3332221111  | D02     | 38000  | Marketing Associate
+emp6   | Jessica Lee     | 1991-07-12 | 234 Maple St, Rural     | 7778889999  | D03     | 175000  | HR Specialist
+emp7   | David Garcia    | 1987-09-05 | 678 Birch St, Countryside| 9998887777  | D04     | 200000  | Operations Manager
+emp8   | Sophia Martinez | 1990-12-30 | 345 Walnut St, Urban    | 1112223333  | D02     | 37000  | Marketing Analyst
+emp10  | Olivia Taylor   | 1994-06-22 | 432 Spruce St, Lakeside | 8889990000  | D01     | 19500  | Finance Assistant
+
+10. Retrieve the name, mobile number of all employees whose name start with “A”.
+
+SELECT emp_name, mobile_no
+FROM Employee
+WHERE emp_name LIKE 'A%';
+
+|emp_name        |   mobile_no   |      
+|Alice Wilson    |3332221111     |
+
+
+11. Display the details of the employee whose name has at least three characters and 
+salary greater than 20000.
+
+SELECT *
+FROM Employee
+WHERE LENGTH(emp_name) >= 3
+AND salary > 20000;
+
+emp_no |  emp_name       | dob        | address                  | mobile_no   | dept_no | salary | designation      
+-------|-----------------|------------|--------------------------|-------------|---------|--------|-------------------
+emp1   | John Doe        | 1990-05-15 | 123 Main St, City       | 7994924584  | D01     | 200000  | Manager
+emp3   | Michael Johnson | 1985-03-10 | 789 Oak St, Village     | 5554443333  | D03     | 40000  | HR Coordinator
+emp4   | Emily Brown     | 1988-11-25 | 567 Pine St, Hamlet     | 2223334444  | D01     | 32000  | Computer Assistant
+emp5   | Alice Wilson    | 1993-02-28 | 890 Cedar St, Suburb    | 3332221111  | D02     | 38000  | Marketing Associate
+emp6   | Jessica Lee     | 1991-07-12 | 234 Maple St, Rural     | 7778889999  | D03     | 175000  | HR Specialist
+emp7   | David Garcia    | 1987-09-05 | 678 Birch St, Countryside| 9998887777  | D04     | 200000  | Operations Manager
+emp8   | Sophia Martinez | 1990-12-30 | 345 Walnut St, Urban    | 1112223333  | D02     | 37000  | Marketing Analyst
+
+12. Display the details of employees with empid ‘emp1’, ‘emp2’ and ‘emp6’.
+
+SELECT * FROM Employee WHERE emp_no IN ('emp1','emp2','emp3');
+
+emp_no |  emp_name       | dob        | address                  | mobile_no   | dept_no | salary | designation      
+-------|-----------------|------------|--------------------------|-------------|---------|--------|-------------------
+emp1   | John Doe        | 1990-05-15 | 123 Main St, City       | 7994924584  | D01     | 200000  | Manager
+emp2   | Jane Smith      | 1992-08-20 | 456 Elm St, Town        | 9876543210  | D02     | 19000  | Marketing Specialist
+emp6   | Jessica Lee     | 1991-07-12 | 234 Maple St, Rural     | 7778889999  | D03     | 175000  | HR Specialist
+
+13. Display employee name and employee id of those who have salary between 120000 and 300000.
+
+SELECT emp_name, emp_no
+FROM Employee
+WHERE salary BETWEEN 120000 AND 300000;
+
+emp_no |  emp_name       | dob        | address                  | mobile_no   | dept_no | salary | designation      
+-------|-----------------|------------|--------------------------|-------------|---------|--------|-------------------
+emp7   | David Garcia    | 1987-09-05 | 678 Birch St, Countryside| 9998887777  | D04     | 200000  | Operations Manager
+emp6   | Jessica Lee     | 1991-07-12 | 234 Maple St, Rural     | 7778889999  | D03     | 175000  | HR Specialist
+
+14. Display the details of employees whose designation is ‘Manager’ or ‘Computer 
+Assistant’.
+
+SELECT *
+FROM Employee
+WHERE designation IN ('Manager', 'Computer Assistant');
+
+emp_no |  emp_name       | dob        | address                  | mobile_no   | dept_no | salary | designation      
+-------|-----------------|------------|--------------------------|-------------|---------|--------|-------------------
+emp1   | John Doe        | 1990-05-15 | 123 Main St, City       | 7994924584  | D01     | 200000  | Manager
+emp4   | Emily Brown     | 1988-11-25 | 567 Pine St, Hamlet     | 2223334444  | D01     | 32000  | Computer Assistant
+
+15. Displays how many employees work for each department.
+
+SELECT dept_no, COUNT(*) AS employee_count
+FROM Employee
+GROUP BY dept_no;
+
+
+dept_no | employee_count
+--------|---------------
+D01     | 3
+D02     | 2
+D03     | 2
+D04     | 1
+D05     | 1
+
+16. Displays average salary of employees in each department.
+
+SELECT dept_no, AVG(salary) AS average_salary
+FROM Employee
+GROUP BY dept_no;
+
+dept_no | average_salary
+--------|---------------
+D01     | 87916.6667
+D02     | 31333.3333
+D03     | 105000.0000
+D04     | 200000.0000
+
+
+17. Displays total salary of employees in each department.
+
+SELECT dept_no, SUM(salary) AS total_salary
+FROM Employee
+GROUP BY dept_no;
+
+dept_no | total_salary
+--------|--------------
+D01     | 278500
+D02     | 110000
+D03     | 217000
+D04     | 200000
+
+18. Displays top and lower salary of employees in each department.
+
+SELECT dept_no, MAX(salary) AS top_salary, MIN(salary) AS lowest_salary
+FROM Employee
+GROUP BY dept_no;
+
+dept_no | top_salary | lowest_salary
+--------|------------|--------------
+D01     | 200000     | 19500
+D02     | 38000      | 19000
+D03     | 175000     | 40000
+D04     | 200000     | 200000
+
+19. Displays average salary of employees in all departments except department with 
+department number ‘D05’.
+
+
+SELECT AVG(salary) AS average_salary
+FROM Employee
+WHERE dept_no <> 'D05';
+
+
+average_salary
+---------------
+100695.4545
+
+
+20. Displays average salary of employees in all departments except department with 
+department number ‘D01’ and average salary greater than 20000 in the ascending 
+order of average salary.
+
+
+SELECT dept_no, AVG(salary) AS average_salary
+FROM Employee
+WHERE dept_no <> 'D01'
+GROUP BY dept_no
+HAVING AVG(salary) > 20000
+ORDER BY AVG(salary) ASC;
+
+
+dept_no | average_salary
+--------|---------------
+D03     | 105000.0000
+
+
+
 
 
 
